@@ -1,76 +1,20 @@
-TORN — Portfolio Website
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
 
-A modern developer portfolio showcasing my projects, skills, and work in software development.
+# Run and deploy your AI Studio app
 
-The website is designed with a minimal dark UI, smooth animations, and responsive layout to create a clean and professional experience.
+This contains everything you need to run your app locally.
 
----
+View your app in AI Studio: https://ai.studio/apps/12f8cf94-aa18-4ca6-8f3f-d3f8e734998f
 
-Overview
+## Run Locally
 
-This portfolio highlights my work as a Full-Stack Developer and System Builder focused on building secure, scalable, and performance-optimized applications.
+**Prerequisites:**  Node.js
 
-The site includes:
 
-- Project showcase
-- Professional experience
-- Contact system
-- Animated UI components
-
----
-
-Features
-
-- Dark modern UI
-- Smooth animations and transitions
-- Responsive design (mobile + desktop)
-- Project showcase with live demo links
-- Direct contact through WhatsApp and Instagram
-- Lightweight static website (fast loading)
-
----
-
-Tech Stack
-
-- HTML
-- CSS
-- JavaScript
-
----
-
-Projects Included
-
-Examples of projects displayed in this portfolio:
-
-- Finance Suite — Privacy-focused finance operating system
-- CyberINT OS — OSINT tool for analyzing public leak databases
-- Neural Canvas — Gesture-controlled computer vision environment
-- Agri Store — Agriculture e-commerce platform
-
----
-
-Deployment
-
-This website is deployed using GitHub Pages.
-
-It runs as a pure static website with no backend or build tools required.
-
----
-
-Contact
-
-For collaboration or project inquiries:
-
-- Instagram: @itz_abhay_g
-- WhatsApp: Available through portfolio contact section
-
----
-
-License
-
-This project is for portfolio purposes.
-Code and design may not be reused without permission.
-
----
-
-© 2026 TORN — All rights reserved
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`
