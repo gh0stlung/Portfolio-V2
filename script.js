@@ -113,4 +113,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1500);
         });
     }
+
+    document.querySelectorAll('.project-image img').forEach(img => {
+        img.addEventListener('click', () => {
+            img.classList.toggle('zoomed');
+        });
+    });
 });
