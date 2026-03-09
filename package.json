@@ -1,9 +1,0 @@
-{
-  "name": "static-portfolio",
-  "version": "1.0.0",
-  "scripts": {
-    "dev": "npx serve -l 3000",
-    "build": "echo 'No build step required for static site'",
-    "lint": "echo 'No linting required for static site'"
-  }
-}
