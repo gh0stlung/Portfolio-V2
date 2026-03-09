@@ -88,32 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', reveal);
     reveal();
 
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = contactForm.querySelector('button[type="submit"]');
-            const originalText = btn.innerHTML;
-            
-            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
-            btn.disabled = true;
-
-            setTimeout(() => {
-                btn.innerHTML = '<i class="fa-solid fa-check"></i> Sent Successfully';
-                btn.style.backgroundColor = '#28a745';
-                btn.style.borderColor = '#28a745';
-                contactForm.reset();
-
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.style.backgroundColor = '';
-                    btn.style.borderColor = '';
-                    btn.disabled = false;
-                }, 3000);
-            }, 1500);
-        });
-    }
-
     document.querySelectorAll('.project-image img').forEach(img => {
         img.addEventListener('click', () => {
             img.classList.toggle('zoomed');
