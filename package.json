@@ -1,0 +1,9 @@
+{
+  "name": "static-portfolio",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npx serve -l 3000",
+    "build": "mkdir -p dist && cp -r index.html style.css script.js images dist/",
+    "lint": "echo 'No linting required for static site'"
+  }
+}
