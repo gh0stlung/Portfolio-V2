@@ -94,18 +94,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const aboutVideo = document.querySelector("#aboutVideo");
-    if (aboutVideo) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    aboutVideo.play();
-                } else {
-                    aboutVideo.pause();
-                }
-            });
-        }, { threshold: 0.6 });
+    const video = document.getElementById("aboutVideo");
 
-        observer.observe(aboutVideo);
+    if (video) {
+        video.addEventListener("loadedmetadata", () => {
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            
+            window.addEventListener("scroll", () => {
+                const scrollPosition = window.scrollY;
+                const progress = scrollPosition / scrollHeight;
+                video.currentTime = (progress * video.duration) % video.duration;
+            });
+        });
     }
 });
