@@ -93,4 +93,19 @@ document.addEventListener('DOMContentLoaded', () => {
             img.classList.toggle('zoomed');
         });
     });
+
+    const aboutVideo = document.querySelector("#aboutVideo");
+    if (aboutVideo) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    aboutVideo.play();
+                } else {
+                    aboutVideo.pause();
+                }
+            });
+        }, { threshold: 0.6 });
+
+        observer.observe(aboutVideo);
+    }
 });
