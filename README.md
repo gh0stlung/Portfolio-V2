@@ -1,20 +1,108 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+⚡ TORN — Developer Portfolio
 
-# Run and deploy your AI Studio app
+<p align="center">
+  <img src="https://img.shields.io/badge/Developer-FullStack-red?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Focus-Systems%20Architecture-black?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Status-Active-red?style=for-the-badge">
+</p>---
 
-This contains everything you need to run your app locally.
+🚀 Live Portfolio
 
-View your app in AI Studio: https://ai.studio/apps/12f8cf94-aa18-4ca6-8f3f-d3f8e734998f
+🔗 Website
 
-## Run Locally
+https://torn-portfolio.vercel.app
 
-**Prerequisites:**  Node.js
+A modern developer portfolio built to showcase projects, skills, and technical capabilities.
 
+---
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+🧠 About This Project
+
+This portfolio represents my work as a Full-Stack Developer & Systems Engineer.
+
+It focuses on:
+
+- Clean UI / UX
+- Fast performance
+- Minimal architecture
+- Professional presentation
+
+The goal is to demonstrate real development skills through a simple but polished interface.
+
+---
+
+🛠 Tech Stack
+
+Technology| Purpose
+HTML5| Structure
+CSS3| Styling
+JavaScript| Interactivity
+Vercel| Deployment
+GitHub| Version control
+
+---
+
+📂 Project Structure
+
+portfolio-v2
+│
+├── images/
+├── index.html
+├── style.css
+├── script.js
+└── README.md
+
+---
+
+⚡ Features
+
+✔ Responsive design
+✔ Animated developer UI
+✔ Fast loading performance
+✔ Clean modern interface
+✔ Professional portfolio layout
+
+---
+
+📸 Preview
+
+<p align="center">
+  <img src="images/preview.gif" width="700">
+</p>(Optional: add a GIF of the website scrolling)
+
+---
+
+🌐 Deployment
+
+Hosted using Vercel for fast global delivery.
+
+Deployment steps:
+
+1. Push code to GitHub
+2. Connect repository to Vercel
+3. Deploy automatically
+
+---
+
+👨‍💻 Author
+
+TORN
+
+Full-Stack Developer
+Systems Architecture Enthusiast
+
+---
+
+⭐ Support
+
+If you like this project:
+
+⭐ Star the repository
+
+It helps others discover the project.
+
+---
+
+<p align="center">
+⚡ Built for performance, clarity, and modern web development
+</p>
