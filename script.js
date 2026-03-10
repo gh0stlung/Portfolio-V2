@@ -94,17 +94,55 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const video = document.getElementById("aboutVideo");
+    const aboutSection = document.getElementById('about');
+    const aboutVideo = document.getElementById('aboutVideo');
+    
+    if (aboutSection && aboutVideo) {
+        // Ensure video doesn't autoplay and is ready for manual seeking
+        aboutVideo.pause();
+        aboutVideo.removeAttribute('autoplay');
+        aboutVideo.load(); // Ensure metadata is being loaded
 
-    if (video) {
-        video.addEventListener("loadedmetadata", () => {
-            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-            
-            window.addEventListener("scroll", () => {
-                const scrollPosition = window.scrollY;
-                const progress = scrollPosition / scrollHeight;
-                video.currentTime = (progress * video.duration) % video.duration;
+        let isUpdating = false;
+
+        const updateVideoOnScroll = () => {
+            if (isUpdating) return;
+            isUpdating = true;
+
+            requestAnimationFrame(() => {
+                const rect = aboutSection.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                // Check if section is visible
+                if (rect.top < windowHeight && rect.bottom > 0) {
+                    // Calculate scroll progress (0 to 1)
+                    // 0: top of section enters bottom of viewport
+                    // 1: bottom of section leaves top of viewport
+                    const totalDistance = windowHeight + rect.height;
+                    const currentDistance = windowHeight - rect.top;
+                    let progress = currentDistance / totalDistance;
+                    
+                    // Clamp progress between 0 and 1
+                    progress = Math.max(0, Math.min(1, progress));
+                    
+                    if (aboutVideo.duration && !isNaN(aboutVideo.duration)) {
+                        aboutVideo.currentTime = progress * aboutVideo.duration;
+                    }
+                }
+                isUpdating = false;
             });
-        });
+        };
+
+        window.addEventListener('scroll', updateVideoOnScroll, { passive: true });
+        // Also update on resize to handle layout changes
+        window.addEventListener('resize', updateVideoOnScroll, { passive: true });
+        
+        // Initial call when metadata is loaded
+        aboutVideo.addEventListener('loadedmetadata', updateVideoOnScroll);
+        
+        // Fallback initial call
+        if (aboutVideo.readyState >= 1) {
+            updateVideoOnScroll();
+        }
     }
 });
