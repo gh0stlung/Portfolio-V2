@@ -68,7 +68,8 @@ portfolio-v2
 
 <p align="center">
   <img src="images/preview.gif" width="700">
-</p>(Optional: add a GIF of the website scrolling)
+
+
 
 ---
 
