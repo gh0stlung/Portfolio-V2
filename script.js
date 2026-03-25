@@ -2,21 +2,22 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('year').textContent = new Date().getFullYear();
 
     const mobileToggle = document.getElementById('mobile-toggle');
-    const mobileClose = document.getElementById('mobile-close');
     const nav = document.getElementById('nav');
     const navLinks = document.querySelectorAll('.nav-link');
 
     if (mobileToggle) {
-        mobileToggle.addEventListener('click', () => {
-            nav.classList.add('active');
+        mobileToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            nav.classList.toggle('active');
         });
     }
 
-    if (mobileClose) {
-        mobileClose.addEventListener('click', () => {
+    // Close nav when clicking outside
+    document.addEventListener('click', (e) => {
+        if (nav.classList.contains('active') && !nav.contains(e.target) && !mobileToggle.contains(e.target)) {
             nav.classList.remove('active');
-        });
-    }
+        }
+    });
 
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
