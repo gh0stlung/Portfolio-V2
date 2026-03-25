@@ -2,31 +2,25 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('year').textContent = new Date().getFullYear();
 
     const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileClose = document.getElementById('mobile-close');
     const nav = document.getElementById('nav');
     const navLinks = document.querySelectorAll('.nav-link');
 
     if (mobileToggle) {
         mobileToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            const icon = mobileToggle.querySelector('i');
-            if (nav.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            } else {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            }
+            nav.classList.add('active');
+        });
+    }
+
+    if (mobileClose) {
+        mobileClose.addEventListener('click', () => {
+            nav.classList.remove('active');
         });
     }
 
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             nav.classList.remove('active');
-            const icon = mobileToggle.querySelector('i');
-            if (icon) {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            }
         });
     });
 
